@@ -6,7 +6,7 @@ job         : consultant
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [shiny]       # {mathjax, quiz, bootstrap}
+widgets     : [shiny,mathjax] # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 
@@ -40,9 +40,10 @@ knit        : slidify::knit2slides
 
 * With data from [here](http://maplight.org/us-congress/bill/113-hr-2397/1742215/contributions-by-vote?sort=asc&order=$%20From%20Interest%20Groups%3Cbr%20/%3EThat%20Opposed&party[D]=D&party[R]=R&party[I]=I&vote[AYE]=AYE&vote[NOE]=NOE&vote[NV]=NV&voted_with[with]=with&voted_with[not-with]=not-with&state=&custom_from=01/01/2011&custom_to=12/31/2012&all_pols=1&uid=44999&interests-support=&interests-oppose=D2000-D3000-D5000-D9000-D4000-D0000-D6000&from=01-01-2011&to=12-31-2012&source=pacs-nonpacs&campaign=congressional) and logistic regression, you can estimate the probability of a No vote as a function of party affiliation and industry funding.
 * You can do this under two assumptions: 
- - there's only a baseline difference (e.g. Republicans are more likely to vote No, as their constituents might be law-and-order types who take a dim view of Snowden) but representatives from either party respond to funding the same way: \\(P(No) ~ f(Party + Amount)\\)  
- - there's a difference both at baseline and in how representatives from each party respond to funding (e.g. a Democrat who gets defense funding is less likely to show proper gratitude than a Republican counterpart, at any funding level): \\(P(No) ~ f(Party * Amount)\\)
-   
+ - there's only a baseline difference (e.g. Republicans are more likely to vote No, as their constituents might be law-and-order types who take a dim view of Snowden) but representatives from either party respond to funding the same way: $P(No) ~ f(Party + Amount)$
+ - there's a difference both at baseline and in how representatives from each party respond to funding (e.g. a Democrat who gets defense funding is less likely to show proper gratitude than a Republican counterpart, at any funding level): $P(No) ~ f(Party * Amount)$
+
+
 --- 
 
 ## Interpreting the model
