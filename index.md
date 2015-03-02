@@ -84,7 +84,7 @@ em {
 ## Some disclaimers
 
 * The Amash amendment was a great candidate for this exercise. 
- - It failed quite narrowly, so you had balanced classes, which helps the logistic regression classifier, so you get these fairly narrow probability ranges with quite high confidence. 
- - The Yes side got no funding from anywhere. In a typical issue you have money punted on both sides, so the equation has to take that into account.
- - This was an ideologically polarizing issue, pitting law-and-order Republicans and blue dog Democrats on one side against old-school hipppie Democrats and libertarian-leaning Republicans on the other. This is the cool kind of fight that will produce a visible baseline difference. 
-* So, a great follow-up would be to pick some more evenly-fought issue, with money on both sides and ideological differences less stark, where there's voting and MapLight data available, and repeat the exercise with the model expanded accordingly. [Here](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) is one example.
+ - It failed quite narrowly; this produced balanced classes, which helps the logistic regression classifier get narrow probability ranges with high confidence. 
+ - The Yes side got no funding. In a typical issue you have money on both sides and the model has to take that into account somehow.
+ - This was an ideologically polarizing issue, pitting law-and-order Republicans and blue dog Democrats against old-school hipppie Democrats and libertarian-leaning Republicans. This is the cool kind of fight that will produce a visible baseline difference. 
+* So, a great follow-up would be to pick some more issue with money on both sides and ideological differences less stark where there's voting and MapLight data available, and repeat the exercise with the model expanded accordingly. [This](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might do.
