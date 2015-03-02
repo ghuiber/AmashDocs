@@ -62,10 +62,10 @@ knit        : slidify::knit2slides
 
 ## The quantity of interest
 
-* We don't want to just run a logit under each assumption above, and report the parameter estimates. These days we can and should do better.
-* We want to plot the _expected probability of a No vote over a reasonable range of funding levels_, by party, and simulate the uncertainty surrounding it.
-* This would be useful: it would immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.
-* This is both easy to do now with [Zelig](http://zeligproject.org/) and has been the recommended approach since [this seminal paper](http://gking.harvard.edu/files/abs/making-abs.shtml) in 2001.
+* We don't want to just run a logit under each assumption above, and report the parameter estimates. These days we can do better.
+* We will plot the _expected probability of a No vote over a reasonable range of funding levels_, by party, and simulate the uncertainty surrounding it.
+* This will immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.
+* This is easy to do with [Zelig](http://zeligproject.org/); the mechanics were explained [here](http://gking.harvard.edu/files/abs/making-abs.shtml) in 2001(!)
 
 ---
 
