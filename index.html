@@ -119,9 +119,9 @@ P(No) \sim f(Party * Amount)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>The first assumption is closer than the second to the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic to this view, but if the second assumption fits the data better, that&#39;s evidence that you&#39;re wrong.</li>
-<li>If under either assumption the response is flat over a plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it&#39;s simply that what they want matches what the majority wants. </li>
-<li>OK, that&#39;s nice, but we just want to price politicians.</li>
+<li>The first assumption mirrors the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic, but if the second assumption fits the data better, that&#39;s evidence that you&#39;re wrong.</li>
+<li>If under either assumption the response is flat over some plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it&#39;s simply that what they want matches what the majority wants. </li>
+<li>In other words, if you see no increase in the probability of voting your way as you increase the funding, don&#39;t bother trying to find the right price: the politicians are not for sale.</li>
 </ul>
 
   </article>
@@ -134,9 +134,9 @@ P(No) \sim f(Party * Amount)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>We don&#39;t want to just run a logit under each assumption above, and report the parameter estimates. These days we can do better.</li>
-<li>We will plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
-<li>This will immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.</li>
+<li>We will run a logit under each assumption above, but won&#39;t report the parameter estimates. They&#39;re not what&#39;s of interest.</li>
+<li>Instead, we will plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
+<li>This will immediately tell an interested party how much they should expect to pay for a vote in their favor, with the probabillity of such a vote shown within a chosen confidence band -- 80%, 95%, etc.</li>
 <li>This is easy to do with <a href="http://zeligproject.org/">Zelig</a>; the mechanics were explained <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">here</a> in 2001(!)</li>
 </ul>
 
@@ -150,6 +150,26 @@ P(No) \sim f(Party * Amount)
   </hgroup>
   <article data-timings="">
     <iframe src=https://ghuiber.shinyapps.io/Amash/></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Some disclaimers</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The Amash amendment was a great candidate for this exercise. 
+
+<ul>
+<li>It failed quite narrowly, so you had balanced classes, which helps the logistic regression classifier, so you get these fairly narrow probability ranges with quite high confidence. </li>
+<li>The Yes side got no funding from anywhere. In a typical issue you have money punted on both sides, so the equation has to take that into account.</li>
+<li>This was an ideologically polarizing issue, pitting law-and-order Republicans and blue dog Democrats on one side against old-school hipppie Democrats and libertarian-leaning Republicans on the other. This is the cool kind of fight that will produce a visible baseline difference. </li>
+</ul></li>
+<li>So, a great follow-up would be to pick some more evenly-fought issue, with money on both sides and ideological differences less stark, where there&#39;s voting and MapLight data available, and repeat the exercise with the model expanded accordingly. <a href="http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions">Here</a> is one example.</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -199,6 +219,12 @@ P(No) \sim f(Party * Amount)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=7 title='The app'>
          7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Some disclaimers'>
+         8
       </a>
     </li>
   </ul>

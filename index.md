@@ -54,17 +54,17 @@ knit        : slidify::knit2slides
 
 ## Interpreting the model
 
-* The first assumption is closer than the second to the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic to this view, but if the second assumption fits the data better, that's evidence that you're wrong.
-* If under either assumption the response is flat over a plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it's simply that what they want matches what the majority wants. 
-* OK, that's nice, but we just want to price politicians.
+* The first assumption mirrors the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic, but if the second assumption fits the data better, that's evidence that you're wrong.
+* If under either assumption the response is flat over some plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it's simply that what they want matches what the majority wants. 
+* In other words, if you see no increase in the probability of voting your way as you increase the funding, don't bother trying to find the right price: the politicians are not for sale.
 
 ---
 
 ## The quantity of interest
 
-* We don't want to just run a logit under each assumption above, and report the parameter estimates. These days we can do better.
-* We will plot the _expected probability of a No vote over a reasonable range of funding levels_, by party, and simulate the uncertainty surrounding it.
-* This will immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.
+* We will run a logit under each assumption above, but won't report the parameter estimates. They're not what's of interest.
+* Instead, we will plot the *expected probability of a No vote over a reasonable range of funding levels*, by party, and simulate the uncertainty surrounding it.
+* This will immediately tell an interested party how much they should expect to pay for a vote in their favor, with the probabillity of such a vote shown within a chosen confidence band -- 80%, 95%, etc.
 * This is easy to do with [Zelig](http://zeligproject.org/); the mechanics were explained [here](http://gking.harvard.edu/files/abs/making-abs.shtml) in 2001(!)
 
 ---
@@ -73,4 +73,12 @@ knit        : slidify::knit2slides
 
 <iframe src=https://ghuiber.shinyapps.io/Amash/></iframe>
 
+---
 
+## Some disclaimers
+
+* The Amash amendment was a great candidate for this exercise. 
+ - It failed quite narrowly, so you had balanced classes, which helps the logistic regression classifier, so you get these fairly narrow probability ranges with quite high confidence. 
+ - The Yes side got no funding from anywhere. In a typical issue you have money punted on both sides, so the equation has to take that into account.
+ - This was an ideologically polarizing issue, pitting law-and-order Republicans and blue dog Democrats on one side against old-school hipppie Democrats and libertarian-leaning Republicans on the other. This is the cool kind of fight that will produce a visible baseline difference. 
+* So, a great follow-up would be to pick some more evenly-fought issue, with money on both sides and ideological differences less stark, where there's voting and MapLight data available, and repeat the exercise with the model expanded accordingly. [Here](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) is one example.
