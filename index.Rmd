@@ -26,8 +26,8 @@ em {
 
 ## The working example
 
-* In response to the first wave of Snowden revelations, US Representative Justin Amash (R, Mich.) introduced the "Defund the NSA" amendment on July 24, 2013.
-* The amendment failed 217 No to 205 Yes, in line with the wishes of:
+*  On July 24, 2013, shortly after the first wave of Snowden revelations, US Representative Justin Amash (R, MI) introduced the "Defund the NSA" amendment.
+* It failed 217 to 205, in line with the wishes of:
  - the President of the United States (on record  [here](http://www.businessinsider.com/amash-amendment-nsa-white-house-obama-veto-2013-7))
  - security and defense industry interests (the surveillance state is a customer)
  - US citizens who don't think that the NSA is doing anything wrong, and whose representatives carried the day (this is just how the system should work)
@@ -36,8 +36,8 @@ em {
 
 ## Some questions you might ask
 
-1. OK, so No votes collected more from defense interests than Yes votes did. So what? Do US representatives really respond to funding from special interests?
-1. If it turns out that they do, could you get an idea of how much might do the job?
+1. So what if No votes collected more from defense interests than Yes votes did? Do US representatives really respond to funding from special interests?
+1. If they do, is there a way to get an idea of how much might do the job?
 3. Could you use the recipe for pricing votes on other issues where interested parties might be curious?
 
 ---
