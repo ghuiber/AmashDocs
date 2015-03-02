@@ -12,6 +12,12 @@ knit        : slidify::knit2slides
 
 --- 
 
+<style>
+em {
+  font-style: italic
+}
+</style>
+
 ## The motivation
 
 * [Lawmakers Who Upheld NSA Phone Spying Received Double the Defense Industry Cash](http://www.wired.com/2013/07/money-nsa-vote/).
