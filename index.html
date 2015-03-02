@@ -94,12 +94,14 @@
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Using data from <a href="http://maplight.org/us-congress/bill/113-hr-2397/1742215/contributions-by-vote?sort=asc&amp;order=$%20From%20Interest%20Groups%3Cbr%20/%3EThat%20Opposed&amp;party%5BD%5D=D&amp;party%5BR%5D=R&amp;party%5BI%5D=I&amp;vote%5BAYE%5D=AYE&amp;vote%5BNOE%5D=NOE&amp;vote%5BNV%5D=NV&amp;voted_with%5Bwith%5D=with&amp;voted_with%5Bnot-with%5D=not-with&amp;state=&amp;custom_from=01/01/2011&amp;custom_to=12/31/2012&amp;all_pols=1&amp;uid=44999&amp;interests-support=&amp;interests-oppose=D2000-D3000-D5000-D9000-D4000-D0000-D6000&amp;from=01-01-2011&amp;to=12-31-2012&amp;source=pacs-nonpacs&amp;campaign=congressional">here</a> you can estimate the probability of a No vote as a function of party affiliation and industry funding using logistic regression.</li>
+<li>With data from <a href="http://maplight.org/us-congress/bill/113-hr-2397/1742215/contributions-by-vote?sort=asc&amp;order=$%20From%20Interest%20Groups%3Cbr%20/%3EThat%20Opposed&amp;party%5BD%5D=D&amp;party%5BR%5D=R&amp;party%5BI%5D=I&amp;vote%5BAYE%5D=AYE&amp;vote%5BNOE%5D=NOE&amp;vote%5BNV%5D=NV&amp;voted_with%5Bwith%5D=with&amp;voted_with%5Bnot-with%5D=not-with&amp;state=&amp;custom_from=01/01/2011&amp;custom_to=12/31/2012&amp;all_pols=1&amp;uid=44999&amp;interests-support=&amp;interests-oppose=D2000-D3000-D5000-D9000-D4000-D0000-D6000&amp;from=01-01-2011&amp;to=12-31-2012&amp;source=pacs-nonpacs&amp;campaign=congressional">here</a> and logistic regression, you can estimate the probability of a No vote as a function of party affiliation and industry funding.</li>
 <li>You can do this under two assumptions: 
 
 <ul>
-<li>there&#39;s only a baseline difference (e.g. Republicans are more likely to vote No, as their constituents might be law-and-order types who take a dim view of Snowden) but representatives from either party respond to funding the same way.</li>
-<li>there&#39;s a difference both at baseline and in how representatives from each party respond to funding (e.g. a Democrat who gets defense funding is less likely to show proper gratitude than a Republican counterpart, at any funding level).</li>
+<li>there&#39;s only a baseline difference (e.g. Republicans are more likely to vote No, as their constituents might be law-and-order types who take a dim view of Snowden) but representatives from either party respond to funding the same way:</li>
+<li>\(P(No) ~ f(Party + Amount) \)</li>
+<li>there&#39;s a difference both at baseline and in how representatives from each party respond to funding (e.g. a Democrat who gets defense funding is less likely to show proper gratitude than a Republican counterpart, at any funding level):</li>
+<li>\(P(No) ~ f(Party * Amount) \)</li>
 </ul></li>
 </ul>
 
