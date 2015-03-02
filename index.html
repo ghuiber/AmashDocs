@@ -98,16 +98,27 @@
 <li>You can do this under two assumptions: 
 
 <ul>
-<li>there&#39;s only a baseline difference (e.g. Republicans are more likely to vote No, as their constituents might be law-and-order types who take a dim view of Snowden) but representatives from either party respond to funding the same way: \(P(No) ~ f(Party + Amount)\)<br></li>
-<li>there&#39;s a difference both at baseline and in how representatives from each party respond to funding (e.g. a Democrat who gets defense funding is less likely to show proper gratitude than a Republican counterpart, at any funding level): \(P(No) ~ f(Party * Amount)\)</li>
+<li>there&#39;s only a baseline difference but representatives from either party respond to funding the same way: 
+\[
+P(No) \sim f(Party + Amount)
+\]</li>
+<li>there&#39;s a difference both at baseline and in how representatives from each party respond to funding: 
+\[
+P(No) \sim f(Party * Amount)
+\]</li>
 </ul></li>
 </ul>
 
-<hr>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<h2>Interpreting the model</h2>
-
-<ul>
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Interpreting the model</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
 <li>The first assumption is closer than the second to the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic to this view, but if the second assumption fits the data better, that&#39;s evidence that you&#39;re wrong.</li>
 <li>If under either assumption the response is flat over a plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it&#39;s simply that what they want matches what the majority wants. </li>
 <li>OK, that&#39;s nice, but we just want to price politicians.</li>
@@ -117,23 +128,23 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h2>The quantity of interest</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>We don&#39;t want to just run a logit under each assumption above, and report the parameter estimates. These days we can and should do better.</li>
-<li>We want to plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
-<li>This would be useful: it would immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.</li>
-<li>This is both easy to do now with <a href="http://zeligproject.org/">Zelig</a> and has been the recommended approach since <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">this seminal paper</a> in 2001.</li>
+<li>We don&#39;t want to just run a logit under each assumption above, and report the parameter estimates. These days we can do better.</li>
+<li>We will plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
+<li>This will immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.</li>
+<li>This is easy to do with <a href="http://zeligproject.org/">Zelig</a>; the mechanics were explained <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">here</a> in 2001(!)</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-7" style="background:;">
   <hgroup>
     <h2>The app</h2>
   </hgroup>
@@ -174,14 +185,20 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='The quantity of interest'>
+        data-slide=5 title='Interpreting the model'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='The app'>
+        data-slide=6 title='The quantity of interest'>
          6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='The app'>
+         7
       </a>
     </li>
   </ul>
@@ -199,7 +216,21 @@
   <script src="shared/bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
   
-  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->
