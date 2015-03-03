@@ -137,6 +137,15 @@ table(hr37$Party,hr37$Vote)
 
 ---
 
+## Back to those questions you might ask
+
+* There is some evidence that US Representatives do indeed respond to funding. The Amash example above illustrates it well.
+* There is a way for special interests to find the right price of individual US Representatives for an issue of interest: all it takes is a simple logit regression and some simulation.
+* The recipe is issue-agnostic, but it comes with some limitations: some issues are easier than others, and some cannot be priced individually.
+
+---
+
 ## Thank you
 
-The code is on [GitHub](https://github.com/ghuiber/Amash)
+* [MapLight](http://maplight.org/) has the data and my code is on [GitHub](https://github.com/ghuiber/Amash). Feel free to fork it and experiment.
+
