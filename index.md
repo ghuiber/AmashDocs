@@ -94,17 +94,17 @@ em {
 
 ## A more interesting use case
  
-* You could find an issue with money on both sides, no ideological baggage, and no partisan positions staked out, and use MapLight data to run a version of the model that can price both Yes and No outcomes. It's an easy tweak. 
-* This would be a situation where finding the correct level of funding could actually change the result of the vote, not just look like it might.
-* A big enough corpus of such issues would make this pricing app commercially viable. If I find any, I'll pitch it to investors.
+* For an issue with money on both sides, no ideological baggage, and no partisan positions staked out, this app can use MapLight data to price both Yes and No outcomes. It's an easy tweak. 
+* This would be the ideal use case, where finding the correct level of funding could actually change the result of the vote, not just look like it might.
+* This is work in progress. The good news is that MapLight data is easy to scrape with [`rvest`](http://cran.r-project.org/web/packages/rvest/index.html). If I turn up a handful of examples that fit these requirements, that may be enough for the first round of funding.
 
 ---
 
 ## What might break the app
 
-* You could find an issue with money on both sides but very stark partisan differences, where this app will show voting probabilities by party on either side of the 50% line and staying far from it at all levels of funding. 
+* For an issue with money on both sides but very stark partisan differences, this app will show voting probabilities by party on either side of the 50% line and staying far from it at all levels of funding. 
  - If this is what you see, it's worth asking whether the piles of money being spent on this particular issue are wasted, or you're seeing endogeneity at work, like with [Milton Friedman's thermostat](http://themonkeycage.org/2012/07/31/milton-friedmans-thermostat/): massive funding that looks like it's being wasted is actually what *keeps* individual representatives from crossing party lines.
- - The app, unfortunately, is not smart enough to answer this question: it will return the trivial result that you shouldn't bother spending anything at all.
+ - The app cannot answer this question. It will return the trivial result that you shouldn't bother spending anything at all.
  - [H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might be the perfect example: Republicans loved it, Democrats hated it, special interests funded generously both sides, and the bill passed almost strictly along party lines.
 
 ---
