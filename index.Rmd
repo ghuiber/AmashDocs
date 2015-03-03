@@ -60,9 +60,11 @@ em {
 
 ## Interpreting the model
 
-* The first assumption mirrors the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic, but if the second assumption fits the data better, that's evidence that you're wrong.
-* If under either assumption the response is flat over some plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it's simply that what they want matches what the majority wants. 
-* In other words, if you see no increase in the probability of voting your way as you increase the funding, don't bother trying to find the right price: the politicians are not for sale.
+* The first assumption mirrors the sentiment of every third-party candidate and disengaged citizen, that the two main parties are interchangeable; you may be sympathetic, but if the second assumption fits the data better, that's evidence that you're wrong.
+* If under either assumption the response is flat over a feasible range of funding, this can be read in two ways:
+ - special interests are wasting their time; when the vote does go their way, it's simply that what they want matches what the majority wants
+ - special interests aren't buying retail; instead, they get the votes they want *by keeping representatives from voting across party lines*; this simple model of pricing individual representatives does not fit that use case.
+* In other words, if you see no increase in the probability of voting your way as you increase the funding, don't bother trying to find the right price: either the politicians are not for sale, or you'll have to buy the whole party.
 
 ---
 
