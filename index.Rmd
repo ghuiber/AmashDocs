@@ -87,17 +87,17 @@ em {
  - It failed narrowly; this produced balanced classes, which helps the logistic regression classifier fit response curves within narrow probability ranges. 
  - But it did not fail along party lines; this left enough of the variation in `Vote` to be explained by `Amount`, rather than `Party`.
  - The Yes side got no funding. This made things a little easier to reason about.
- - This was an ideologically polarizing issue, but not a strictly partisan one;  law-and-order Republicans and blue dog Democrats went against old-school hipppie Democrats and libertarian-leaning Republicans. 
- - This amendment was probably not very likely to pass. If that's how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side.
- - When they get both funding and cover, US Representatives can probably be relied on to be responsive.
+ - This was an ideologically polarizing issue, but not a partisan one. 
+ - This amendment was not likely to pass. If that's how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side.
 
 --- 
 
 ## More interesting use cases
  
-* You could find an issue with money on both sides and ideological differences less stark where there's voting and MapLight data available, and run a version of the model that can price both Yes and No outcomes. It's an easy tweak.
-* Or you could find an issue with money on both sides but very stark partisan differences, where this app will show you that the battle is not worth fighting: there's no reasonable range of funding where individual representatives will cross party lines. 
-* [H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might be the perfect example of the latter: Republicans loved it, Democrats hated it, and special interests funded generously both sides.
+* You could find an issue with money on both sides, no ideological baggage, and no partisan positions staked out, and use MapLight data to run a version of the model that can price both Yes and No outcomes. It's an easy tweak.
+* Or you could find an issue with money on both sides but very stark partisan differences, where this app will show you that there is no reasonable range of funding where individual representatives will cross party lines -- in other words, this issue cannot be influenced in isolation. 
+ - If this is what you see, it's worth asking whether the piles of money being spent are wasted, or you're seeing classic endogeneity at work, like with [Milton Friedman's thermostat](http://themonkeycage.org/2012/07/31/milton-friedmans-thermostat/).
+ - [H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might be the perfect example: Republicans loved it, Democrats hated it, special interests funded generously both sides, and the bill passed almost strictly along party lines.
 
 ---
 
