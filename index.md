@@ -93,10 +93,10 @@ em {
 
 --- 
 
-## How you might expand this app's use
+## More interesting use cases
  
 * You could find an issue with money on both sides and ideological differences less stark where there's voting and MapLight data available, and run a version of the model that can price both Yes and No outcomes. It's an easy tweak.
-* Another interesting case would be an issue with money on both sides but very stark partisan differences, where this app will show you that the battle is not worth fighting: there's no reasonable range of funding where individual representatives will cross party lines. 
+* Or you could find an issue with money on both sides but very stark partisan differences, where this app will show you that the battle is not worth fighting: there's no reasonable range of funding where individual representatives will cross party lines. 
 * [H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might be the perfect example of the latter: Republicans loved it, Democrats hated it, and special interests funded generously both sides.
 
 ---
