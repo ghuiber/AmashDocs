@@ -96,7 +96,7 @@ em {
  
 * You could find an issue with money on both sides, no ideological baggage, and no partisan positions staked out, and use MapLight data to run a version of the model that can price both Yes and No outcomes. It's an easy tweak. 
 * This would be a situation where finding the correct level of funding could actually change the result of the vote, not just look like it might.
-* This is work in progress. A big enough corpus of such issues would make an app like commercially viable. If I find such evidence, I'll pitch it to investors.
+* A big enough corpus of such issues would make this pricing app commercially viable. If I find any, I'll pitch it to investors.
 
 ---
 
