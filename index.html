@@ -41,11 +41,16 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>The motivation</h2>
-  </hgroup>
   <article data-timings="">
-    <ul>
+    <style>
+em {
+  font-style: italic
+}
+</style>
+
+<h2>The motivation</h2>
+
+<ul>
 <li><a href="http://www.wired.com/2013/07/money-nsa-vote/">Lawmakers Who Upheld NSA Phone Spying Received Double the Defense Industry Cash</a>.</li>
 </ul>
 
@@ -59,8 +64,8 @@
   </hgroup>
   <article data-timings="">
     <ul>
-<li>In response to the first wave of Snowden revelations, US Representative Justin Amash (R, Mich.) introduced the &quot;Defund the NSA&quot; amendment on July 24, 2013.</li>
-<li>The amendment failed 217 No to 205 Yes, in line with the wishes of:
+<li> On July 24, 2013, shortly after the first wave of Snowden revelations, US Representative Justin Amash (R, MI) introduced the &quot;Defund the NSA&quot; amendment.</li>
+<li>It failed 217 to 205, in line with the wishes of:
 
 <ul>
 <li>the President of the United States (on record  <a href="http://www.businessinsider.com/amash-amendment-nsa-white-house-obama-veto-2013-7">here</a>)</li>
@@ -79,8 +84,8 @@
   </hgroup>
   <article data-timings="">
     <ol>
-<li>OK, so No votes collected more from defense interests than Yes votes did. So what? Do US representatives really respond to funding from special interests?</li>
-<li>If it turns out that they do, could you get an idea of how much might do the job?</li>
+<li>So what if No votes collected more from defense interests than Yes votes did? Do US representatives really respond to funding from special interests?</li>
+<li>If they do, is there a way to get an idea of how much might do the job?</li>
 <li>Could you use the recipe for pricing votes on other issues where interested parties might be curious?</li>
 </ol>
 
@@ -119,9 +124,14 @@ P(No) \sim f(Party * Amount)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>The first assumption is closer than the second to the sentiment of every third-party candidate, whether Green, Socialist, or Libertarian, and of every disengaged citizen, that the two main parties are interchangeable; you may be sympathetic to this view, but if the second assumption fits the data better, that&#39;s evidence that you&#39;re wrong.</li>
-<li>If under either assumption the response is flat over a plausible range of funding, that is evidence that special interests are wasting their time: when the vote does go their way, it&#39;s simply that what they want matches what the majority wants. </li>
-<li>OK, that&#39;s nice, but we just want to price politicians.</li>
+<li>The first assumption mirrors the sentiment of every third-party candidate and disengaged citizen, that the two main parties are interchangeable; you may be sympathetic, but if the second assumption fits the data better, that&#39;s evidence that you&#39;re wrong.</li>
+<li>If under either assumption the response is flat over a feasible range of funding, this can be read in two ways:
+
+<ul>
+<li>special interests are wasting their time; when the vote does go their way, it&#39;s simply that what they want matches what the majority wants</li>
+<li>special interests aren&#39;t buying retail; instead, they get the votes they want <em>by keeping representatives from voting across party lines</em>; this simple model of pricing individual representatives does not fit that use case.</li>
+</ul></li>
+<li>In other words, if you see no increase in the probability of voting your way as you increase the funding, don&#39;t bother trying to find the right price: either the politicians are not for sale, or you&#39;ll have to buy the whole party.</li>
 </ul>
 
   </article>
@@ -134,9 +144,9 @@ P(No) \sim f(Party * Amount)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>We don&#39;t want to just run a logit under each assumption above, and report the parameter estimates. These days we can do better.</li>
-<li>We will plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
-<li>This will immediately tell an interested party how much for a vote in their favor, with a probabillity shown within a chosen confidence band -- 80%, 95%, etc.</li>
+<li>We will run a logit under each assumption above, but won&#39;t report the parameter estimates. They&#39;re not what&#39;s of interest.</li>
+<li>Instead, we will plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
+<li>This will immediately tell an interested party how much they should expect to pay for a vote in their favor, with the probabillity of such a vote shown within a chosen confidence band -- 80%, 95%, etc.</li>
 <li>This is easy to do with <a href="http://zeligproject.org/">Zelig</a>; the mechanics were explained <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">here</a> in 2001(!)</li>
 </ul>
 
@@ -146,10 +156,116 @@ P(No) \sim f(Party * Amount)
 
 <slide class="" id="slide-7" style="background:;">
   <hgroup>
-    <h2>The app</h2>
+    <h2>The proof of concept</h2>
   </hgroup>
   <article data-timings="">
     <iframe src=https://ghuiber.shinyapps.io/Amash/></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Don&#39;t read too much into it</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The Amash amendment was a great candidate for a simple proof-of-concept. 
+
+<ul>
+<li>It failed narrowly; this produced balanced classes, which helps the logistic regression classifier fit response curves within narrow probability ranges. </li>
+<li>But it did not fail along party lines; this left enough of the variation in <code>Vote</code> to be explained by <code>Amount</code>, rather than <code>Party</code>.</li>
+<li>The Yes side got no funding. This made things a little easier to reason about.</li>
+<li>This was an ideologically polarizing issue, but not a partisan one. </li>
+<li>This amendment was not likely to pass. If that&#39;s how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>A more interesting use case</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>For an issue with money on both sides, no ideological baggage, and no partisan positions staked out, this app can use MapLight data to price both Yes and No outcomes. It&#39;s an easy tweak. </li>
+<li>This would be the ideal use case, where finding the correct level of funding could actually change the result of the vote, not just look like it might.</li>
+<li>This is work in progress. MapLight data is easy to scrape with <a href="http://cran.r-project.org/web/packages/rvest/index.html"><code>rvest</code></a>. If I turn up a handful of examples that fit these requirements, that may be enough for the seed round.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>What might break the app</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>For an issue with money on both sides but very stark partisan differences, this app will show voting probabilities by party on either side of the 50% line and staying far from it at all levels of funding. 
+
+<ul>
+<li>If this is what you see, it&#39;s worth asking whether the piles of money being spent on this particular issue are wasted, or you&#39;re seeing endogeneity at work, like with <a href="http://themonkeycage.org/2012/07/31/milton-friedmans-thermostat/">Milton Friedman&#39;s thermostat</a>: massive funding that looks like it&#39;s being wasted is actually what <em>keeps</em> individual representatives from crossing party lines.</li>
+<li>The app cannot answer this question. It will return the trivial result that you shouldn&#39;t bother spending anything at all.</li>
+<li><a href="http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions">H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act</a> might be the perfect example: Republicans loved it, Democrats hated it, special interests funded generously both sides, and the bill passed almost strictly along party lines.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>A battle too big for this app</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src=https://ghuiber.shinyapps.io/hr37/></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>How could you have told, before running the app?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Amash votes crossed party lines:</li>
+</ul>
+
+<pre><code>##    
+##     Yes  No
+##   D 111  83
+##   R  94 134
+</code></pre>
+
+<ul>
+<li>HR 37 votes, not so much:</li>
+</ul>
+
+<pre><code>##    
+##     Yes  No
+##   D  29 153
+##   R 242   1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Thank you</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The code is on <a href="https://github.com/ghuiber/Amash">GitHub</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -161,7 +277,7 @@ P(No) \sim f(Party * Amount)
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='The motivation'>
+        data-slide=1 title=''>
          1
       </a>
     </li>
@@ -197,8 +313,44 @@ P(No) \sim f(Party * Amount)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='The app'>
+        data-slide=7 title='The proof of concept'>
          7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Don&#39;t read too much into it'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='A more interesting use case'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='What might break the app'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='A battle too big for this app'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='How could you have told, before running the app?'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Thank you'>
+         13
       </a>
     </li>
   </ul>
