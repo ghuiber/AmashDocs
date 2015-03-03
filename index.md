@@ -98,7 +98,7 @@ em {
  
 * For an issue with money on both sides, no ideological baggage, and no partisan positions staked out, this app can use MapLight data to price both Yes and No outcomes. It's an easy tweak. 
 * This would be the ideal use case, where finding the correct level of funding could actually change the result of the vote, not just look like it might.
-* This is work in progress. The good news is that MapLight data is easy to scrape with [`rvest`](http://cran.r-project.org/web/packages/rvest/index.html). If I turn up a handful of examples that fit these requirements, that may be enough for the first round of funding.
+* This is work in progress. MapLight data is easy to scrape with [`rvest`](http://cran.r-project.org/web/packages/rvest/index.html). If I turn up a handful of examples that fit these requirements, that may be enough for the seed round.
 
 ---
 
