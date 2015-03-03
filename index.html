@@ -151,7 +151,7 @@ P(No) \sim f(Party * Amount)
 
 <slide class="" id="slide-7" style="background:;">
   <hgroup>
-    <h2>The app</h2>
+    <h2>The proof of concept</h2>
   </hgroup>
   <article data-timings="">
     <iframe src=https://ghuiber.shinyapps.io/Amash/></iframe>
@@ -162,19 +162,87 @@ P(No) \sim f(Party * Amount)
 
 <slide class="" id="slide-8" style="background:;">
   <hgroup>
-    <h2>Some disclaimers</h2>
+    <h2>Don&#39;t read too much into it</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>The Amash amendment was a great candidate for this exercise. 
+<li>The Amash amendment was a great candidate for a simple proof-of-concept. 
 
 <ul>
-<li>It failed quite narrowly; this produced balanced classes, which helps the logistic regression classifier get narrow probability ranges with high confidence. </li>
-<li>The Yes side got no funding. In a typical issue you have money on both sides and the model has to take that into account somehow.</li>
-<li>This was an ideologically polarizing issue, pitting law-and-order Republicans and blue dog Democrats against old-school hipppie Democrats and libertarian-leaning Republicans. This is the cool kind of fight that will produce a visible baseline difference. </li>
+<li>It failed narrowly; this produced balanced classes, which helps the logistic regression classifier fit response curves within narrow probability ranges. </li>
+<li>But it did not fail along party lines; this left enough of the variation in <code>Vote</code> to be explained by <code>Amount</code>, rather than <code>Party</code>.</li>
+<li>The Yes side got no funding. This made things a little easier to reason about.</li>
+<li>This was an ideologically polarizing issue, but not a strictly partisan one;  law-and-order Republicans and blue dog Democrats went against old-school hipppie Democrats and libertarian-leaning Republicans. </li>
+<li>This amendment was probably not very likely to pass. If that&#39;s how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side.</li>
+<li>When they get both funding and cover, US Representatives can probably be relied on to be responsive.</li>
 </ul></li>
-<li>A good follow-up would be to find an issue with money on both sides and ideological differences less stark where there&#39;s voting and MapLight data available, and repeat the exercise with the model expanded accordingly. <a href="http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions">This</a> might do.</li>
 </ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>How you might expand this app&#39;s use</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>You could find an issue with money on both sides and ideological differences less stark where there&#39;s voting and MapLight data available, and run a version of the model that can price both Yes and No outcomes. It&#39;s an easy tweak.</li>
+<li>Another interesting case would be an issue with money on both sides but very stark partisan differences, where this app will show you that the battle is not worth fighting: there&#39;s no reasonable range of funding where individual representatives will cross party lines. </li>
+<li><a href="http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions">H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act</a> might be the perfect example of the latter: Republicans loved it, Democrats hated it, and special interests funded generously both sides.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>A battle too big for this app</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src=https://ghuiber.shinyapps.io/hr37/></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>How could you have told, before running the app?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Amash votes crossed party lines:</li>
+</ul>
+
+<pre><code>##    
+##     Yes  No
+##   D 111  83
+##   R  94 134
+</code></pre>
+
+<ul>
+<li>HR 37 votes, not so much:</li>
+</ul>
+
+<pre><code>##    
+##     Yes  No
+##   D  29 153
+##   R 242   1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Thank you</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The code is on <a href="https://github.com/ghuiber/Amash">GitHub</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -222,14 +290,38 @@ P(No) \sim f(Party * Amount)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='The app'>
+        data-slide=7 title='The proof of concept'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Some disclaimers'>
+        data-slide=8 title='Don&#39;t read too much into it'>
          8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='How you might expand this app&#39;s use'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='A battle too big for this app'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='How could you have told, before running the app?'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Thank you'>
+         12
       </a>
     </li>
   </ul>

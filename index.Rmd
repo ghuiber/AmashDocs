@@ -75,16 +75,58 @@ em {
 
 ---
 
-## The app
+## The proof of concept
 
 <iframe src=https://ghuiber.shinyapps.io/Amash/></iframe>
 
 ---
 
-## Some disclaimers
+## Don't read too much into it
 
-* The Amash amendment was a great candidate for this exercise. 
- - It failed quite narrowly; this produced balanced classes, which helps the logistic regression classifier get narrow probability ranges with high confidence. 
- - The Yes side got no funding. In a typical issue you have money on both sides and the model has to take that into account somehow.
- - This was an ideologically polarizing issue, pitting law-and-order Republicans and blue dog Democrats against old-school hipppie Democrats and libertarian-leaning Republicans. This is the cool kind of fight that will produce a visible baseline difference. 
-* A good follow-up would be to find an issue with money on both sides and ideological differences less stark where there's voting and MapLight data available, and repeat the exercise with the model expanded accordingly. [This](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might do.
+* The Amash amendment was a great candidate for a simple proof-of-concept. 
+ - It failed narrowly; this produced balanced classes, which helps the logistic regression classifier fit response curves within narrow probability ranges. 
+ - But it did not fail along party lines; this left enough of the variation in `Vote` to be explained by `Amount`, rather than `Party`.
+ - The Yes side got no funding. This made things a little easier to reason about.
+ - This was an ideologically polarizing issue, but not a strictly partisan one;  law-and-order Republicans and blue dog Democrats went against old-school hipppie Democrats and libertarian-leaning Republicans. 
+ - This amendment was probably not very likely to pass. If that's how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side.
+ - When they get both funding and cover, US Representatives can probably be relied on to be responsive.
+
+--- 
+
+## How you might expand this app's use
+ 
+* You could find an issue with money on both sides and ideological differences less stark where there's voting and MapLight data available, and run a version of the model that can price both Yes and No outcomes. It's an easy tweak.
+* Another interesting case would be an issue with money on both sides but very stark partisan differences, where this app will show you that the battle is not worth fighting: there's no reasonable range of funding where individual representatives will cross party lines. 
+* [H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act](http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions) might be the perfect example of the latter: Republicans loved it, Democrats hated it, and special interests funded generously both sides.
+
+---
+
+## A battle too big for this app
+
+<iframe src=https://ghuiber.shinyapps.io/hr37/></iframe>
+
+---
+
+```{r read_data, cache=TRUE, echo=FALSE}
+knitr::read_chunk('get_data.R')
+```
+
+## How could you have told, before running the app?
+```{r get_data, eval=TRUE, echo=FALSE}
+```
+
+* Amash votes crossed party lines:
+```{r amash_tab,eval=TRUE,echo=FALSE}
+table(amash$Party,amash$Vote)
+```
+
+* HR 37 votes, not so much:
+```{r hr37_tab,eval=TRUE,echo=FALSE}
+table(hr37$Party,hr37$Vote)
+```
+
+---
+
+## Thank you
+
+The code is on [GitHub](https://github.com/ghuiber/Amash)
