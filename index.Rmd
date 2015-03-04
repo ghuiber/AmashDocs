@@ -64,7 +64,7 @@ em {
 * If under either assumption the response is flat over a feasible range of funding, this can be read in two ways:
  - special interests are wasting their time; when the vote does go their way, it's simply that what they want matches what the majority wants
  - special interests aren't buying retail; instead, they [fund entire parties](https://www.opensecrets.org/parties/) and get what they want when votes do not cross party lines; the model does not fit this use case.
-* In both cases the model will show that the correct price is $0, but this is only right under the first interpretation, not the second (surely the price of wholesale influence over an entire political party is larger than $0).
+* In both cases the model will show that the correct price is \$0, but this is only right under the first interpretation, not the second (surely the price of wholesale influence over an entire political party is larger than \$0).
 
 ---
 
