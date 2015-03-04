@@ -73,7 +73,7 @@ em {
 * We will run a logit under each assumption above, but won't report the parameter estimates. They're not what's of interest.
 * Instead, we will plot the *expected probability of a No vote over a reasonable range of funding levels*, by party, and simulate the uncertainty surrounding it.
 * This will immediately tell an interested party how much they should expect to pay for a vote in their favor, with the probabillity of such a vote shown within a chosen confidence band -- 80%, 95%, etc.
-* This is easy to do with [Zelig](http://zeligproject.org/); the mechanics were explained [here](http://gking.harvard.edu/files/abs/making-abs.shtml) in 2000(!)
+* This is easy to do with [Zelig](http://zeligproject.org/); the mechanics were explained [here](http://gking.harvard.edu/files/abs/making-abs.shtml) in 2000 (!)
 
 ---
 
