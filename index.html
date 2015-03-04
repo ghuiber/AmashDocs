@@ -85,8 +85,8 @@ em {
   <article data-timings="">
     <ol>
 <li>So what if No votes collected more from defense interests than Yes votes did? Do US representatives really respond to funding from special interests?</li>
-<li>If they do, is there a way to get an idea of how much might do the job?</li>
-<li>Could you use the recipe for pricing votes on other issues where interested parties might be curious?</li>
+<li>If they do, is there a way to model the correct price for a No vote?</li>
+<li>Could you use this recipe for pricing favorable votes -- whether Yes or No -- on other issues where special interests might want to influence either side?</li>
 </ol>
 
   </article>
@@ -129,9 +129,9 @@ P(No) \sim f(Party * Amount)
 
 <ul>
 <li>special interests are wasting their time; when the vote does go their way, it&#39;s simply that what they want matches what the majority wants</li>
-<li>special interests aren&#39;t buying retail; instead, they get the votes they want <em>by keeping representatives from voting across party lines</em>; this simple model of pricing individual representatives does not fit that use case.</li>
+<li>special interests aren&#39;t buying retail; instead, they <a href="https://www.opensecrets.org/parties/">fund entire parties</a> and get what they want when votes do not cross party lines; the model does not fit this use case.</li>
 </ul></li>
-<li>In other words, if you see no increase in the probability of voting your way as you increase the funding, don&#39;t bother trying to find the right price: either the politicians are not for sale, or you&#39;ll have to buy the whole party.</li>
+<li>In both cases the model will show that the correct price is $0, but this is only right under the first interpretation, not the second (surely the price of wholesale influence over an entire political party is larger than $0).</li>
 </ul>
 
   </article>
@@ -147,7 +147,7 @@ P(No) \sim f(Party * Amount)
 <li>We will run a logit under each assumption above, but won&#39;t report the parameter estimates. They&#39;re not what&#39;s of interest.</li>
 <li>Instead, we will plot the <em>expected probability of a No vote over a reasonable range of funding levels</em>, by party, and simulate the uncertainty surrounding it.</li>
 <li>This will immediately tell an interested party how much they should expect to pay for a vote in their favor, with the probabillity of such a vote shown within a chosen confidence band -- 80%, 95%, etc.</li>
-<li>This is easy to do with <a href="http://zeligproject.org/">Zelig</a>; the mechanics were explained <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">here</a> in 2001(!)</li>
+<li>This is easy to do with <a href="http://zeligproject.org/">Zelig</a>; the mechanics were explained <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">here</a> in 2000(!)</li>
 </ul>
 
   </article>
@@ -177,8 +177,7 @@ P(No) \sim f(Party * Amount)
 <li>It failed narrowly; this produced balanced classes, which helps the logistic regression classifier fit response curves within narrow probability ranges. </li>
 <li>But it did not fail along party lines; this left enough of the variation in <code>Vote</code> to be explained by <code>Amount</code>, rather than <code>Party</code>.</li>
 <li>The Yes side got no funding. This made things a little easier to reason about.</li>
-<li>This was an ideologically polarizing issue, but not a partisan one. </li>
-<li>This amendment was not likely to pass. If that&#39;s how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side.</li>
+<li>This amendment was not likely to pass. If that&#39;s how it was perceived going into the voting, it was more like a photo opp where individual representatives would be happy to cross party lines and score easy points for integrity, on either side. They can probably be relied on to be responsive when they get both funding and cover.</li>
 </ul></li>
 </ul>
 
@@ -192,7 +191,7 @@ P(No) \sim f(Party * Amount)
   </hgroup>
   <article data-timings="">
     <ul>
-<li>For an issue with money on both sides, no ideological baggage, and no partisan positions staked out, this app can use MapLight data to price both Yes and No outcomes. It&#39;s an easy tweak. </li>
+<li>For an issue with money on both sides, no ideological baggage, and no partisan positions staked out, this app can use <a href="http://maplight.org/">MapLight</a> data to price both Yes and No outcomes. It&#39;s an easy tweak. </li>
 <li>This would be the ideal use case, where finding the correct level of funding could actually change the result of the vote, not just look like it might.</li>
 <li>This is work in progress. MapLight data is easy to scrape with <a href="http://cran.r-project.org/web/packages/rvest/index.html"><code>rvest</code></a>. If I turn up a handful of examples that fit these requirements, that may be enough for the seed round.</li>
 </ul>
@@ -210,8 +209,9 @@ P(No) \sim f(Party * Amount)
 <li>For an issue with money on both sides but very stark partisan differences, this app will show voting probabilities by party on either side of the 50% line and staying far from it at all levels of funding. 
 
 <ul>
-<li>If this is what you see, it&#39;s worth asking whether the piles of money being spent on this particular issue are wasted, or you&#39;re seeing endogeneity at work, like with <a href="http://themonkeycage.org/2012/07/31/milton-friedmans-thermostat/">Milton Friedman&#39;s thermostat</a>: massive funding that looks like it&#39;s being wasted is actually what <em>keeps</em> individual representatives from crossing party lines.</li>
+<li>If this is what you see, it&#39;s worth asking whether the piles of money being spent on this particular issue are wasted, or instead massive funding that looks like it&#39;s being wasted is actually what <em>keeps</em> individual representatives from crossing party lines.</li>
 <li>The app cannot answer this question. It will return the trivial result that you shouldn&#39;t bother spending anything at all.</li>
+<li>There is a simple way to avoid this ambiguity: don&#39;t use the app for cases voted along party lines.</li>
 <li><a href="http://maplight.org/us-congress/bill/114-hr-37/6586030/total-contributions">H.R. 37 - Promoting Job Creation and Reducing Small Business Burdens Act</a> might be the perfect example: Republicans loved it, Democrats hated it, special interests funded generously both sides, and the bill passed almost strictly along party lines.</li>
 </ul></li>
 </ul>
@@ -247,7 +247,7 @@ P(No) \sim f(Party * Amount)
 </code></pre>
 
 <ul>
-<li>HR 37 votes, not so much:</li>
+<li>HR 37 votes mostly didn&#39;t:</li>
 </ul>
 
 <pre><code>##    
@@ -267,7 +267,7 @@ P(No) \sim f(Party * Amount)
   <article data-timings="">
     <ul>
 <li>There is some evidence that US Representatives do indeed respond to funding. The Amash example above illustrates it well.</li>
-<li>There is a way for special interests to find the right price of individual US Representatives for an issue of interest: all it takes is a simple logit regression and some simulation.</li>
+<li>There is a way for special interests to find the right price of individual US Representatives for an issue of interest: all it takes is logistic regression and some simulation.</li>
 <li>The recipe is issue-agnostic, but it comes with some limitations: some issues are easier than others, and some cannot be priced individually.</li>
 </ul>
 
